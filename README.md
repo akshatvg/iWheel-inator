@@ -64,6 +64,10 @@ Each one of us had to learn something or the other as we divided our work into m
 
 We intend to add more features, maintain and improve the existing features and User Experience in the near future. Once this is done, we hope to turn iWheel-inator into a well-established startup.
 
+## Demo video
+
+<http://bit.ly/iWi_Demo>
+
 
 ## Want to know our business model?
 
