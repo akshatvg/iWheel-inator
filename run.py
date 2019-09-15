@@ -158,13 +158,13 @@ def get_names():
         
     elif intent=='person':
         thisdict={
-        1:"anand.jpeg",
-        2:"David_Troy.jpeg",
-        3:"Gorkem_Sevinc.jpeg",
-        4:"Joshua_Reiter.jpeg",
-        5:"Kevin_Carter.jpeg",
-        6:"Edward_Shiang.jpeg",
-        7:"Akshat.jpeg",
+        1:"Akshat.jpeg",
+        2:"anand.jpeg",
+        3:"David_Troy.jpeg",
+        4:"Gorkem_Sevinc.jpeg",
+        5:"Joshua_Reiter.jpeg",
+        6:"Kevin_Carter.jpeg",
+        7:"Edward_Shiang.jpeg",
         8:"Andrew_Wiles.jpeg",
         9:"goldy.jpeg",
         10:"sandeep.jpeg"
@@ -201,29 +201,27 @@ def get_names():
                             nameee+=i
                         else:
                             break
+                    
+                    os.remove("test.jpeg")
                     return json.dumps({"response": 'This is' + ' ' + nameee + ', '+ ' who\'s come to visit you! '
                             }), 200
-                    '''print('The face at ' +
-                            str(position['Left']) + ' ' +
-                            str(position['Top']) +
-                            ' matches with ' + confidence + '% confidence')
-                    print(str(thisdict[i].split(".jpeg")))'''
                 imageSource.close()
                 imageTarget.close()               
             if(f!=1):
                 return json.dumps({"response": 'This person doesn\'t exist in our database. Would you like to add him? '
                             }), 200
-                #print ( 'This person doesn\'t exist in our database, what is the name of this person?: ')
-                #namee= input()+".jpeg"
-                namee= "damn this wont work"
-                namee= namee+ ".jpeg"
-                n=n+1
-                os.rename("test.jpeg", namee)
-                d1={n:namee}
-                thisdict.update(d1)
-            elif (f==1):
-                os.remove("test.jpeg")
-                ch='n'
+
+    elif 'add' in command:
+        camera = cv2.VideoCapture(0)
+        return_value, image = camera.read()
+        cv2.imwrite('new.jpeg', image)
+        del(camera)
+        namee= command[4::1]
+        namee= namee+ ".jpeg"
+        n=n+1
+        os.rename("new.jpeg", namee)
+        d1={n:namee}
+        thisdict.update(d1)
 
     elif intent=='text':
         new=[]
