@@ -1,4 +1,4 @@
-![Logo] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inator%20Logo.png "Logo")
+![Logo] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inatorLogo.png "Logo")
 
 # iWheel-inator
 
@@ -76,4 +76,4 @@ Keeping this in mind, we expect the cost of product to be around $100 and the se
 
 ## How we built it
 
-![Tech Stack] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/Tech%20Stack.jpeg "Tech Stack")
+![Tech Stack] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/TechStack.jpeg "Tech Stack")
