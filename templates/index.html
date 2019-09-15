@@ -3,116 +3,103 @@
 
 <head>
 
-  <title>iWheel-inator</title>
+    <title>iWheel-inator</title>
 
 
-  <!--Meta Tags For SEO-->
+    <!--Meta Tags For SEO-->
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <!--Linking Bootstrap, CSS, Favicon, Google Fonts, Ajax & JavaScript-->
+    <!--Linking Bootstrap, CSS, Favicon, Google Fonts, Ajax & JavaScript-->
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link href="../static/img/icons/favicon.png" rel="icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="../static/img/icons/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:500&display=swap" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 
 </head>
 
-<body
-  style="background-image: url(&quot;../static/img/bg.png&quot;);background-repeat: no-repeat;background-size: cover;">
+<body style="background-image: url(&quot;../static/img/bg.png&quot;);background-repeat: no-repeat;background-size: cover;">
 
-  <!--Navbar for learning how to use-->
-  <div class="container-fluid" style="padding: 0px;">
-    <div class="menu-item">
-      <button type="button" class="btn" data-toggle="modal" data-target="#myModal"
-        style="color: whitesmoke;padding: 20px;background-color: transparent;border: none;outline: none;">Learn How To
+    <!--Navbar for learning how to use-->
+    <div class="container-fluid" style="padding: 0px;">
+        <div class="menu-item">
+            <button type="button" class="btn" data-toggle="modal" data-target="#myModal" style="color: whitesmoke;padding: 20px;background-color: transparent;border: none;outline: none;">Learn How To
         Use iWheel-inator</button>
 
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="modal-header">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding: 4px;position:absolute;right:15px;top:10px;" align="right">Close</button>
-              </div>
-              <h1 style="font-family: 'Roboto', sans-serif;margin-top:20px;"><b>Learn How To Use
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="modal-header">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding: 4px;position:absolute;right:15px;top:10px;" align="right">Close</button>
+                            </div>
+                            <h1 style="font-family: 'Roboto', sans-serif;margin-top:20px;"><b>Learn How To Use
                 iWheel-inator</b>
-              </h1>
-              <br>
-              <p style="font-family: 'Open Sans', sans-serif;">1. Click on the microphone button at the
-                bottom of
-                the white box.</p>
-              <p style="font-family: 'Open Sans', sans-serif;">2. Speak whatever you need help with.</p>
-              <br>
-              <p style="font-family: 'Open Sans', sans-serif;"><b>Some things iWheel-inator can help you with
+                            </h1>
+                            <br>
+                            <p style="font-family: 'Open Sans', sans-serif;">1. Click on the microphone button at the bottom of the white box.</p>
+                            <p style="font-family: 'Open Sans', sans-serif;">2. Speak whatever you need help with.</p>
+                            <br>
+                            <p style="font-family: 'Open Sans', sans-serif;"><b>Some things iWheel-inator can help you with
                   are:</b>
-                <br><br>1) Recognise someone, <br>2) Tell you the latest news,<br>3) Give weather updates, <br>4) Read
-                prescriptions and other documents with fine prints,
-                <br>5) Navigate to a place </p><br><br>
+                                <br><br>1) Recognise someone, <br>2) Tell you the latest news,<br>3) Give weather updates, <br>4) Read prescriptions and other documents with fine prints,
+                                <br>5) Navigate to a place </p><br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding: 4px;">Close</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding: 4px;">Close</button>
-            </div>
-          </div>
         </div>
-
-      </div>
     </div>
-  </div>
 
 
-  <!--Heading and description with logo-->
+    <!--Heading and description with logo-->
 
-  <div class="container" align="center"
-    style="box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.15);margin-top: 7vh;background-color: whitesmoke;border-radius: 20px;">
-    <h1 style="font-family: 'Roboto', sans-serif;padding-top:20px;">iWheel-inator</h1>
-    <p style="font-family: 'Open Sans', sans-serif;">A virtual assistant for the elderly & handicapped</p>
-    <img class="img-responsive" align="center" src="../static/img/iWheel-inator Logo.png"
-      style="height:20%;width:20%;box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);background-color: whitesmoke;border-radius: 10px;">
+    <div class="container" align="center" style="box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.15);margin-top: 7vh;background-color: whitesmoke;border-radius: 20px;">
+        <h1 style="font-family: 'Roboto', sans-serif;padding-top:20px;">iWheel-inator</h1>
+        <p style="font-family: 'Open Sans', sans-serif;">A virtual assistant for the elderly & handicapped</p>
+        <img class="img-responsive" align="center" src="../static/img/iWheel-inatorLogo.png" style="height:20%;width:20%;box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);background-color: whitesmoke;border-radius: 10px;">
 
 
-    <!--Actual workspace-->
+        <!--Actual workspace-->
 
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-12"><br />
-        <div class="card scroll" style="border-radius: 30px;width:80%;">
-          <div class="card-body">
-            <div class="row" align="left">
-              <div class="col-lg-12" id="chat-responses">
-              </div>
-            </div>
-            <div class="row" align="right">
-              <div class="col-lg-12">
-                <ul id="chat-input" class="chat-messages pull-right primary-font"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <svg class="mic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1" x="0px" y="0px" viewbox="0 0 100 100" enable-background="new 0 0 100 100"
-                xml:space="preserve">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-12"><br />
+                <div class="card scroll" style="border-radius: 30px;width:80%;">
+                    <div class="card-body">
+                        <div class="row" align="left">
+                            <div class="col-lg-12" id="chat-responses">
+                            </div>
+                        </div>
+                        <div class="row" align="right">
+                            <div class="col-lg-12">
+                                <ul id="chat-input" class="chat-messages pull-right primary-font"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <svg class="mic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
                 <path
                   d="M64.825,38.252c-1.024,0-1.853,0.83-1.853,1.853v11.119c0,7.153-5.819,12.972-12.972,12.972s-12.972-5.819-12.972-12.972  V40.105c0-1.024-0.83-1.853-1.853-1.853s-1.853,0.83-1.853,1.853v11.119c0,8.57,6.498,15.648,14.825,16.573v10.258h-6.25  c-1.024,0-1.853,0.83-1.853,1.853c0,1.024,0.83,1.853,1.853,1.853h16.207c1.024,0,1.853-0.83,1.853-1.853  c0-1.024-0.83-1.853-1.853-1.853h-6.25V67.797c8.327-0.925,14.825-8.003,14.825-16.573V40.105  C66.678,39.082,65.849,38.252,64.825,38.252z">
                 </path>
@@ -125,22 +112,20 @@
                   </path>
                 </g>
               </svg>
-              <div class="recording-status">What would you like
-                to know?
-              </div>
+                            <div class="recording-status">What would you like to know?
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                        </div><br>
+                    </div>
+                </div><br>
             </div>
-            <div class="col-lg-8">
-            </div><br>
-          </div>
-        </div><br>
-      </div>
-      <div class="col-lg-6"></div>
+            <div class="col-lg-6"></div>
+        </div>
     </div>
-  </div>
 
-  <script src="../static/js/index.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 </body>
 
