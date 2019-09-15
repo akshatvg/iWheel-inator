@@ -1,4 +1,4 @@
-<img src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inatorLogo.png " data-canonical-src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inatorLogo.png " width="200" height="200" />
+<img src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inatorLogo.png " data-canonical-src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inatorLogo.png "/>
 
 # iWheel-inator
 
@@ -76,4 +76,4 @@ Keeping this in mind, we expect the cost of product to be around $100 and the se
 
 ## How we built it
 
-<img src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/TechStack.jpeg" data-canonical-src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/TechStack.jpeg" width="200" height="200" />
+<img src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/TechStack.jpeg" data-canonical-src="https://github.com/akshatvg/iWheel-inator/blob/master/static/img/TechStack.jpeg"/>
