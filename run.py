@@ -305,7 +305,7 @@ def get_names():
                 {
                     'action': 'talk',
                     'voiceName': 'Brian',
-                    'text': command
+                    'text': '...'+command
                 }
                 ]
             response = client.create_call({
@@ -322,6 +322,11 @@ def get_names():
 
             pprint(response)
             call_trigger=0
+            mytext = 'call has been initiated!.'
+            language = 'en'
+            myobj = gTTS(text=mytext, lang=language, slow=False)  
+            myobj.save("call.mp3") 
+            subprocess.call(['afplay','call.mp3'])
             return json.dumps({"Call excuted succesfully!"}), 200
         
         else:    #make call here
