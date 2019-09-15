@@ -16,8 +16,12 @@ import googlemaps
 from datetime import datetime
 import analyze as az
 from opencage.geocoder import OpenCageGeocode
+import nexmo
+from pprint import pprint
 
-  
+
+
+
 
 
 
@@ -76,6 +80,7 @@ def get_names():
         latitude = geo_json['latitude']
         longitude = geo_json['longitude']
         return [latitude,longitude]
+        
     if intent=='weather':
         latt,long = currentad()
         endpoint = 'http://api.openweathermap.org/data/2.5/forecast?'
@@ -98,6 +103,10 @@ def get_names():
         
        #response = assistant.assistant(resp_json["test"])
         return json.dumps({"response": 'It is a little '+descript_place + ' and temperature outside is, ' + temp_c_str}), 200
+    elif intent == 'call':
+        global call_trigger
+        call_trigger = 1
+        return json.dumps({"response": "Can I know the message you wish to convey?"}), 200
 
     elif intent=='maps':
         #webbrowser.open('http:127.0.0.1:5000/map.html')
@@ -284,13 +293,44 @@ def get_names():
         for i in new:
             news+=i+',\n'+'\n'
         return json.dumps({"response": news})
-    
-    return json.dumps({"response": ''}), 200
+    else:
+        if call_trigger==1:
+            #call_text = command
+            client = nexmo.Client(
+            application_id='bfc1264a-8021-4576-bd74-bf9dd9c04222',
+            private_key='./private.key',
+            )
+        
+            ncco = [
+                {
+                    'action': 'talk',
+                    'voiceName': 'Brian',
+                    'text': command
+                }
+                ]
+            response = client.create_call({
+            'to': [{
+                'type': 'phone',
+                'number': '12132103009'
+            }],
+            'from': {
+                'type': 'phone',
+                'number': '12132103009'
+            },
+            'ncco': ncco
+            })
+
+            pprint(response)
+            call_trigger=0
+            return json.dumps({"Call excuted succesfully!"}), 200
+        
+        else:    #make call here
+            return json.dumps({"response":'wanna know what i can do? check your top-left.'}), 200
 if __name__=='__main__':
             #from pprint import pprint
 
     key = '9ceed27ef0e646188df1656457bdffa6'
     geocoder = OpenCageGeocode(key)
-
+    
     webbrowser.open('http://127.0.0.1:5000/')
     app.run(debug=False)

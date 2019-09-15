@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Make Phone Calls</title>
+  <script src="C:/Users/rayan/node_modules/nexmo-client/dist/conversationClient.js"></script>
+</head>
+
+<body>
+  <p id="notification"></p>
+  <button type="button" id="call">Call</button>
+  <button type="button" id="hangup">Hang Up</button>
+  <script>
+    const USER_JWT = "USR-031095b2-87e2-411f-a7a9-5574a451e8a0";
+    let notification = document.getElementById("notification");
+    new ConversationClient()
+      .login(USER_JWT)
+      .then(application => {
+        notification.textContent = `You've logged in with the user ${application.me.name}`;
+        document.getElementById("call").addEventListener("click", () => {
+          application.callPhone("2132103009");
+          notification.textContent = `You're calling a phone number`;
+        })
+        application.on("member:call", (member, call) => {
+          notification.textContent = `You're in a call`;
+          document.getElementById("hangup").addEventListener("click", () => {
+            call.hangUp();
+            notification.textContent = "The call has ended";
+          })
+        })
+      })
+      .catch(console.log);
+  </script>
+</body>
+
+</html>
