@@ -1,3 +1,5 @@
+![Logo] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/iWheel-inator%20Logo.png "Logo")
+
 # iWheel-inator
 
 A multiservice detachable device for the elderly and handicapped to solve some of the daily challenges faced by millions worldwide. 
@@ -74,4 +76,4 @@ Keeping this in mind, we expect the cost of product to be around $100 and the se
 
 ## How we built it
 
-![Tech Stack] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/Tech Stack.jpeg "Tech Stack")
+![Tech Stack] (https://github.com/akshatvg/iWheel-inator/blob/master/static/img/Tech%20Stack.jpeg "Tech Stack")

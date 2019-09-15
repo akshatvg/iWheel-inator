@@ -1,2 +1,5 @@
 rootkey.csv
 __pycache__
+.env
+env
+venv
