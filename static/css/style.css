@@ -126,6 +126,7 @@ p.rambot svg {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 300px;
+  min-height: 200px;
 }
 
 .chat li.left .chat-body {
@@ -261,4 +262,9 @@ p.rambot svg {
   .menu-item {
     display: none;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
 }
