@@ -72,7 +72,7 @@ def key_phrases(subscription_key,text):
         print("Encountered exception. {}".format(err))
 
 
-def sentiment(subscription_key):
+def sentiment(subscription_key,text):
     """Sentiment.
     Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
     """
@@ -84,12 +84,7 @@ def sentiment(subscription_key):
 
     try:
         documents = [
-            {"id": "1", "language": "en", "text": "I had the best day of my life."},
-            {"id": "2", "language": "en",
-                "text": "This was a waste of my time. The speaker put me to sleep."},
-            {"id": "3", "language": "es", "text": "No tengo dinero ni nada que dar..."},
-            {"id": "4", "language": "it",
-                "text": "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
+            {"id": "1", "language": "en", "text": text},
         ]
 
         response = text_analytics.sentiment(documents=documents)
@@ -144,5 +139,7 @@ if __name__ == "__main__":
     ent = entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,"take me to Sydney Town Hall")
     #print(keys)
     print(ent)
-    print('input text: ',keys[0])
-    print('phrases: ',keys[1])
+    #print('input text: ',keys[0])
+    #print('phrases: ',keys[1])
+    print(sentiment(SUBSCRIPTION_KEY_ENV_NAME,"THE PRODUCT IS TRASH"))
+    
