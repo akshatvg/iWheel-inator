@@ -67,15 +67,22 @@ Keeping this in mind, we expect the cost of product to be around $100 and the se
 </p>
 
 ## Requirements
-[![GitHub top language](https://img.shields.io/github/languages/top/akshatvg/iWheel-inator?logo=html&style=social)](https://github.com/akshatvg/)
+[![GitHub top language](https://img.shields.io/github/languages/top/akshatvg/iWheel-inator?logo=python&style=social)](https://github.com/akshatvg/)
 
-The source code of this project is written in **`HTML/CSS/JS`**. So, you do not require anything extra to run this project.
+The source code of this project is written in **`Flask, HTML/CSS/JS, IBM Watson`**. So, you will have to install `requirements.txt` to run this project.
 
 ## Instructions
-
-[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://timemator.akshatvg.com)
-
-Extract the folder and run `index.html`
+```
+$ git clone https://github.com/akshatvg/iWheel-inator.git
+$ cd "iWheel-inator"
+$ pip install -r requirements.txt
+$ aws configure
+AWS Access Key ID [None]: #
+AWS Secret Access Key [None]: #
+Default region name [None]: ap-south-1
+Default output format [None]: 
+$ python3 run.py
+```
 
 
 ## Need help?
