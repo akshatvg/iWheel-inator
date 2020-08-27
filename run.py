@@ -18,7 +18,8 @@ import analyze as az
 from opencage.geocoder import OpenCageGeocode
 import nexmo
 from pprint import pprint
-
+from ibm_watson import AssistantV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 
 
@@ -51,17 +52,18 @@ def get_names():
             command= 'okay iWheel-inator'
         else:
             command= command
-    #print('You said: ' + command + '\n')
-    assistant = ibm_watson.AssistantV1(
-    version='2019-02-28',
-    iam_apikey='u1N9ThXmpZUk_-1_F1AaAw-11BbBXFtCbonmmerHbnFI',
-    url='https://gateway-wdc.watsonplatform.net/assistant/api'
+        authenticator = IAMAuthenticator('u1N9ThXmpZUk_-1_F1AaAw-11BbBXFtCbonmmerHbnFI')
+    assistant = AssistantV1(
+        version='2019-02-28',
+        authenticator = authenticator
     )
 
+    assistant.set_service_url('https://gateway-wdc.watsonplatform.net/assistant/api')
+
     response = assistant.message(
-        workspace_id='7cb1c0fc-6e91-4b63-9e93-8a30028bd58e',
+        workspace_id='97afbe1c-dd6b-4d91-8022-8d483eae2174',
         input={
-            'text': command #use the <text> we get with flask
+            'text': command
         }
     ).get_result()
 
@@ -102,9 +104,11 @@ def get_names():
         print('It is a little '+descript_place + ' and temperature outside is, ' + temp_c_str)
         
        #response = assistant.assistant(resp_json["test"])
+        global call_trigger
+        call_trigger =0
         return json.dumps({"response": 'It is a little '+descript_place + ' and temperature outside is, ' + temp_c_str}), 200
     elif intent == 'call':
-        global call_trigger
+        
         call_trigger = 1
         return json.dumps({"response": "Can I know the message you wish to convey?"}), 200
 
@@ -163,6 +167,7 @@ def get_names():
         myobj = gTTS(text=mytext, lang=language, slow=False)  
         myobj.save("welcome.mp3") 
         subprocess.call(['afplay','welcome.mp3'])
+        call_trigger =0
         return render_template('map.html'), json.dumps({"response": 'It openend on a new Tab'}), 200
         
     elif intent=='person':
@@ -217,6 +222,7 @@ def get_names():
                 imageSource.close()
                 imageTarget.close()               
             if(f!=1):
+                call_trigger =0
                 return json.dumps({"response": 'This person doesn\'t exist in our database. Would you like to add him? '
                             }), 200
 
@@ -227,7 +233,6 @@ def get_names():
         del(camera)
         namee= command[4::1]
         namee= namee+ ".jpeg"
-        n=n+1
         os.rename("new.jpeg", namee)
         d1={n:namee}
         thisdict.update(d1)
@@ -263,7 +268,7 @@ def get_names():
                 stuff+= text['DetectedText'] +'\n'
             
         print(stuff)
-
+        call_trigger =0
         return json.dumps({"response": stuff}), 200
         #talkToMe(str(text['DetectedText']))
 
@@ -292,6 +297,7 @@ def get_names():
         news=' '
         for i in new:
             news+=i+',\n'+'\n'
+            call_trigger =0
         return json.dumps({"response": news})
     else:
         if call_trigger==1:
@@ -305,7 +311,7 @@ def get_names():
                 {
                     'action': 'talk',
                     'voiceName': 'Brian',
-                    'text': '...'+command
+                    'text': '! ! ! ! !hey!'+command
                 }
                 ]
             response = client.create_call({
